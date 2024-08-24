@@ -12,6 +12,7 @@ import org.springframework.data.repository.core.support.DefaultCrudMethods;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.example.longtv.longtv.bean.UserBean;
 import com.example.longtv.longtv.entity.UsersEntity;
 
 import jakarta.persistence.Id;

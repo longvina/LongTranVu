@@ -5,10 +5,13 @@ package com.example.longtv.longtv.entity;
 
 import java.beans.beancontext.BeanContext;
 import java.io.Serializable;
+import java.util.Date;
 
 import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -38,13 +41,25 @@ public class UsersEntity implements Serializable {
 	private String userName;
 	
 	@Column
-	private String passwordEncr;
+	private String password;
 	
-	public UsersEntity(long ID, String userName, String passwordEncr) {
+	@Column
+	private Date lastupdateDate;
+	
+	@Column
+	private Date lastapproveDate;
+	
+	@Column
+	private String lastupdateBy;
+	
+	@Column
+	private String lastappoveBy;
+	
+	public UsersEntity(long ID, String userName, String password) {
 		super();
 		this.ID = ID;
 		this.userName = userName;
-		this.passwordEncr = passwordEncr;
+		this.password = password;
 	}
 	
 	public UsersEntity() {
@@ -68,12 +83,12 @@ public class UsersEntity implements Serializable {
 		this.userName = userName;
 	}
 
-	public String getPasswordEncr() {
-		return passwordEncr;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPasswordEncr(String passwordEncr) {
-		this.passwordEncr = passwordEncr;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 
